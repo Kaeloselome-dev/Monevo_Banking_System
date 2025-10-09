@@ -1,19 +1,16 @@
 package com.examplemonevo;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
-
 public class Customer {
     private String customerID;
     private String address;
     private String username;
-    private String password;
+    private String password; 
 
-    
     private final List<Account> accounts = new ArrayList<>();
 
     public Customer() {}
@@ -22,7 +19,7 @@ public class Customer {
         this.customerID = customerID;
         this.address = address;
         this.username = username;
-        this.password = password;
+        this.password = password; 
     }
 
     /* --- Getters / Setters --- */
@@ -35,19 +32,17 @@ public class Customer {
     public String getUsername() { return username; }
     public void setUsername(String username) { this.username = username; }
 
-    public String getPassword() { return password; }
-    public void setPassword(String password) { this.password = password; }
+    public String getPassword() { return password; }  // Plain text password
+    public void setPassword(String password) { this.password = password; }  
 
-    
+   
     public List<Account> getAccounts() {
-        // return an unmodifiable view to protect internal list
         return Collections.unmodifiableList(accounts);
     }
 
     public Account getAccount(String accountNumber) {
         if (accountNumber == null) return null;
         for (Account acc : accounts) {
-            
             if (accountNumber.equals(acc.getAccountNumber())) {
                 return acc;
             }
@@ -57,28 +52,31 @@ public class Customer {
 
     public void addAccount(Account account) {
         Objects.requireNonNull(account, "account must not be null");
-        accounts.add(account);
+        // Prevent adding duplicate account
+        if (!accounts.contains(account)) {
+            accounts.add(account);
+        }
     }
 
     public boolean removeAccount(String accountNumber) {
         Account acc = getAccount(accountNumber);
-        if (acc != null) {
+        if (acc != null && accounts.size() > 1) {  
             return accounts.remove(acc);
         }
         return false;
     }
 
-    
     public Account openAccount(Account account) {
         addAccount(account);
         return account;
     }
 
-    
-    public boolean login(String username, String password) {
+    public boolean login(String username, String verifypassword) {
         if (this.username == null || this.password == null) return false;
-        return this.username.equals(username) && this.password.equals(password);
+        return this.username.equals(username) && verifypassword.equals(password);
     }
+
+
 
     public void logout() {
         
@@ -94,4 +92,5 @@ public class Customer {
                 '}';
     }
 }
+
 
