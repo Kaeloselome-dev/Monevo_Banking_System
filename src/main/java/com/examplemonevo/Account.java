@@ -1,3 +1,5 @@
+package com.examplemonevo;
+
 public abstract class Account {
     protected String accountNumber;
     protected double balance;
@@ -15,7 +17,6 @@ public abstract class Account {
     
     s
     public abstract boolean withdraw(double amount);
-    public abstract void applyMonthlyInterest();
     
     
     public void deposit(double amount) {
@@ -27,7 +28,8 @@ public abstract class Account {
         }
     }
     
-   
+   public void displayAccountInfo(){}
+    
     public String getAccountNumber() { return accountNumber; }
 
     public double getBalance() { return balance; }

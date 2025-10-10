@@ -49,10 +49,11 @@ public class InvestmentAccount extends Account implements InterestBearing {
     }
     
     @Override
-    public void calculateInterest() {
+    public double calculateInterest() {
         double interest = this.balance * INTEREST_RATE;
         this.balance += interest;
         System.out.println("Applied monthly interest: " + interest + " | New Balance: " + this.balance);
+        return interest;
     }
     
     @Override

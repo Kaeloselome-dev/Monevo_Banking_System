@@ -1,3 +1,5 @@
+package com.examplemonevo;
+
 public class SavingsAccount extends Account implements InterestBearing {
     private static final double INTEREST_RATE = 0.0005; 
     
@@ -34,10 +36,11 @@ public class SavingsAccount extends Account implements InterestBearing {
     }
     
     @Override
-    public void calculateInterest() {
+    public double calculateInterest() {
         double interest = getBalance() * INTEREST_RATE;
         deposit(interest);
         System.out.println("Applied monthly interest: " + interest);
+        return interest;
     }
     
     @Override

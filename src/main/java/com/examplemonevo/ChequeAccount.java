@@ -1,9 +1,6 @@
-package com.banking.core;
+package com.examplemonevo;
 
-/**
- * Cheque Account implementation
- * Demonstrates: Inheritance, Method Overriding
- */
+
 public class ChequeAccount extends Account implements InterestBearing,Withdrawable {
     private String employer;
     private String companyAddress;
