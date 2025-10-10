@@ -1,0 +1,74 @@
+package com.banking.core;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Individual_Customer extends Customer {
+    private String idNumber;  
+    private String dateOfBirth;
+    private String occupation;
+    
+    public Individual_Customer(String customerId, String firstName, String surname, 
+                              String address, String idNumber, String dateOfBirth) {
+        super(customerId, firstName, surname, address);
+        this.idNumber = idNumber;
+        this.dateOfBirth = dateOfBirth;
+    }
+    
+    
+    public ChequeAccount openChequeAccount(String accountNumber, double initialDeposit,
+                                         String branch, String employer, String companyAddress) {
+        if (occupation == null || employer == null) {
+            System.out.println("Error: Employment information required for cheque account");
+            return null;
+        }
+        return new ChequeAccount(accountNumber, initialDeposit, branch, this, employer, companyAddress);
+    }
+    
+    // Getters and Setters
+    public String getIdNumber() { 
+        return idNumber; 
+    }
+    
+    public String getDateOfBirth() { 
+        return dateOfBirth; 
+    }
+    
+    public String getOccupation() { 
+        return occupation; 
+    }
+    
+    public void setOccupation(String occupation) { 
+        this.occupation = occupation; 
+    }
+    
+    public void setIdNumber(String idNumber) { 
+        this.idNumber = idNumber; 
+    }
+
+    public void displayCustomerInfo() {
+        System.out.println("Customer ID: " + getCustomerId());
+        System.out.println("Name: " + getFirstName() + " " + getSurname());
+        System.out.println("Address: " + getAddress());
+        System.out.println("ID Number: " + idNumber);
+        System.out.println("Date of Birth: " + dateOfBirth);
+        System.out.println("Occupation: " + (occupation != null ? occupation : "Not specified"));
+        System.out.println("Number of Accounts: " + getAccounts().size());
+    }
+    
+    @Override
+    public String toString() {
+        return "Individual_Customer{" +
+                "customerId='" + getCustomerId() + '\'' +
+                ", firstName='" + getFirstName() + '\'' +
+                ", surname='" + getSurname() + '\'' +
+                ", address='" + getAddress() + '\'' +
+                ", idNumber='" + idNumber + '\'' +
+                ", dateOfBirth='" + dateOfBirth + '\'' +
+                ", occupation='" + occupation + '\'' +
+                ", numberOfAccounts=" + getAccounts().size() +
+                '}';
+    }
+    
+    
+}

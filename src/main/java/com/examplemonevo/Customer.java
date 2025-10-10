@@ -1,96 +1,79 @@
-package com.examplemonevo;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Objects;
-
-public class Customer {
-    private String customerID;
+public abstract class Customer {
+    private String customerId;
+    private String firstName;
+    private String surname;
     private String address;
+    private String phoneNumber;
+    private String email;
     private String username;
     private String password; 
-
-    private final List<Account> accounts = new ArrayList<>();
-
-    public Customer() {}
-
-    public Customer(String customerID, String address, String username, String password) {
-        this.customerID = customerID;
+    private List<Account> accounts;
+    
+    public Customer(String customerId, String firstName, String surname, String address, 
+                   String username, String password) {
+        this.customerId = customerId;
+        this.firstName = firstName;
+        this.surname = surname;
         this.address = address;
         this.username = username;
         this.password = password; 
+        this.accounts = new ArrayList<>();
     }
-
-    /* --- Getters / Setters --- */
-    public String getCustomerID() { return customerID; }
-    public void setCustomerID(String customerID) { this.customerID = customerID; }
-
-    public String getAddress() { return address; }
-    public void setAddress(String address) { this.address = address; }
-
-    public String getUsername() { return username; }
-    public void setUsername(String username) { this.username = username; }
-
-    public String getPassword() { return password; }  // Plain text password
-    public void setPassword(String password) { this.password = password; }  
-
-   
-    public List<Account> getAccounts() {
-        return Collections.unmodifiableList(accounts);
+    
+    // Authentication methods
+    public boolean login(String enteredUsername, String enteredPassword) {
+        return this.username.equals(enteredUsername) && this.password.equals(enteredPassword);
     }
-
-    public Account getAccount(String accountNumber) {
-        if (accountNumber == null) return null;
-        for (Account acc : accounts) {
-            if (accountNumber.equals(acc.getAccountNumber())) {
-                return acc;
-            }
+    
+    public boolean changePassword(String oldPassword, String newPassword) {
+        if (this.password.equals(oldPassword)) {
+            this.password = newPassword;
+            System.out.println("Password changed successfully");
+            return true;
         }
-        return null;
-    }
-
-    public void addAccount(Account account) {
-        Objects.requireNonNull(account, "account must not be null");
-        // Prevent adding duplicate account
-        if (!accounts.contains(account)) {
-            accounts.add(account);
-        }
-    }
-
-    public boolean removeAccount(String accountNumber) {
-        Account acc = getAccount(accountNumber);
-        if (acc != null && accounts.size() > 1) {  
-            return accounts.remove(acc);
-        }
+        System.out.println("Invalid old password");
         return false;
     }
-
-    public Account openAccount(Account account) {
-        addAccount(account);
-        return account;
+    
+    // Method to add an account
+    public void addAccount(Account account) {
+        if (account != null) {
+            accounts.add(account);
+            System.out.println("Account " + account.getAccountNumber() + " added for customer " + this.firstName);
+        }
     }
-
-    public boolean login(String username, String verifypassword) {
-        if (this.username == null || this.password == null) return false;
-        return this.username.equals(username) && verifypassword.equals(password);
+    
+    
+    public List<Account> getAccounts() {
+        return new ArrayList<>(accounts);
     }
-
-
-
-    public void logout() {
-        
-    }
-
+    
+   
+    public abstract boolean canOpenChequeAccount();
+    
+    
+    public String getCustomerId() { return customerId; }
+    public String getFirstName() { return firstName; }
+    public String getSurname() { return surname; }
+    public String getAddress() { return address; }
+    public String getPhoneNumber() { return phoneNumber; }
+    public String getEmail() { return email; }
+    public String getUsername() { return username; }
+    
+    
+    public void setPhoneNumber(String phoneNumber) { this.phoneNumber = phoneNumber; }
+    public void setEmail(String email) { this.email = email; }
+    public void setAddress(String address) { this.address = address; }
+    
     @Override
     public String toString() {
         return "Customer{" +
-                "customerID='" + customerID + '\'' +
-                ", username='" + username + '\'' +
+                "customerId='" + customerId + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", surname='" + surname + '\'' +
                 ", address='" + address + '\'' +
-                ", accounts=" + accounts.size() +
+                ", username='" + username + '\'' +
+                ", numberOfAccounts=" + accounts.size() +
                 '}';
     }
 }
-
-
