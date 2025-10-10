@@ -26,11 +26,7 @@ public class SavingsAccount extends Account implements InterestBearing {
         System.out.println("Withdrawals Allowed: No");
     }
 
-    @Override
-    public boolean withdraw(double amount) {
-        System.out.println("Error: Withdrawals are not allowed from Savings Account");
-        return false;
-    }
+    
 
     public double getBalance() { return balance; 
     }

@@ -1,3 +1,5 @@
+package com.examplemonevo;
+
 public class Corporate_Customer extends Customer {
     private String companyName;
     private String registrationNumber;

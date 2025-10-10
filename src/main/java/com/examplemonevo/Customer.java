@@ -1,3 +1,7 @@
+package com.examplemonevo;
+
+import java.util.ArrayList;
+
 public abstract class Customer {
     private String customerId;
     private String firstName;
@@ -7,7 +11,7 @@ public abstract class Customer {
     private String email;
     private String username;
     private String password; 
-    private List<Account> accounts;
+    private ArrayList<Account> accounts;
     
     public Customer(String customerId, String firstName, String surname, String address, 
                    String username, String password) {
@@ -44,7 +48,7 @@ public abstract class Customer {
     }
     
     
-    public List<Account> getAccounts() {
+    public ArrayList<Account> getAccounts() {
         return new ArrayList<>(accounts);
     }
     

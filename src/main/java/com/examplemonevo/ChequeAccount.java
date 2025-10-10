@@ -1,7 +1,7 @@
 package com.examplemonevo;
 
 
-public class ChequeAccount extends Account implements InterestBearing,Withdrawable {
+public class ChequeAccount extends Account implements Withdrawable {
     private String employer;
     private String companyAddress;
     
@@ -21,17 +21,18 @@ public void deposit(double amount) {
         }
     }
 
+    
     @Override
-    public boolean withdraw(double amount) {
-        if (amount > 0 && amount <= this.balance) {
-            this.balance -= amount;
-            System.out.println("Withdrawn: " + amount + " | New Balance: " + this.balance);
-            return true;
-        } else {
-            System.out.println("Invalid withdrawal amount or insufficient funds");
-            return false;
-        }
+public void withdraw(double amount) {  // Change double to void
+    if (amount > 0 && amount <= this.balance) {
+        this.balance -= amount;
+        System.out.println("Withdrawn: " + amount + " | New Balance: " + this.balance);
+        // No return statement needed
+    } else {
+        System.out.println("Invalid withdrawal amount or insufficient funds");
+        // No return statement needed
     }
+}
 
     @Override
     public void displayAccountInfo() {
@@ -44,15 +45,6 @@ public void deposit(double amount) {
         System.out.println("Interest Rate: 0% (No interest)");
     }
     
-
-
-    
-    @Override
-    public void calculateInterest() {
-        System.out.println("No interest applied to Cheque Account");
-    }
-    
-   
     public String getEmployer() { return employer; }
     public String getCompanyAddress() { return companyAddress; }
     

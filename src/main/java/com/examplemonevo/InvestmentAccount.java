@@ -1,6 +1,6 @@
 package com.examplemonevo;
 
-public class InvestmentAccount extends Account implements InterestBearing {
+public class InvestmentAccount extends Account implements InterestBearing,Withdrawable {
     private static final double INTEREST_RATE = 0.05; 
     private static final double MIN_OPENING_BALANCE = 500.00;
     
@@ -36,17 +36,17 @@ public class InvestmentAccount extends Account implements InterestBearing {
         System.out.println("Minimum Opening Balance: BWP " + MIN_OPENING_BALANCE);
     }
     
-    @Override
-    public boolean withdraw(double amount) {
-        if (amount > 0 && amount <= this.balance) {
-            this.balance -= amount;
-            System.out.println("Withdrawn: " + amount + " | New Balance: " + this.balance);
-            return true;
-        } else {
-            System.out.println("Invalid withdrawal amount or insufficient funds");
-            return false;
-        }
+  @Override
+  public void withdraw(double amount) {  // Change double to void
+    if (amount > 0 && amount <= this.balance) {
+        this.balance -= amount;
+        System.out.println("Withdrawn: " + amount + " | New Balance: " + this.balance);
+        
+    } else {
+        System.out.println("Invalid withdrawal amount or insufficient funds");
+       
     }
+}
     
     @Override
     public double calculateInterest() {

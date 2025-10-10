@@ -15,8 +15,6 @@ public abstract class Account {
         this.customer = customer;
     }
     
-    s
-    public abstract boolean withdraw(double amount);
     
     
     public void deposit(double amount) {
