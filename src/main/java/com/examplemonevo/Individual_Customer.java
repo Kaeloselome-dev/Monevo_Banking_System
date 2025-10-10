@@ -1,7 +1,5 @@
 package com.examplemonevo;
 
-import java.util.ArrayList;
-
 public class Individual_Customer extends Customer {
     private String idNumber;  
     private String dateOfBirth;
