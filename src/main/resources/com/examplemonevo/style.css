@@ -52,11 +52,9 @@
 /* Text field styling */
 .text-field {
     -fx-background-color: white;
-    -fx-background-radius: 6;
      -fx-border-color: #0d4d7a;
     -fx-border-radius: 6;
     -fx-border-width: 1;
-    -fx-padding: 12 16 12 16;
     -fx-font-size: 14px;
     -fx-text-fill: #2c3e50;
 }
@@ -72,8 +70,6 @@
     -fx-background-radius: 6;
    -fx-border-color: #0d4d7a;
     -fx-border-radius: 6;
-    -fx-border-width: 1;
-    -fx-padding: 12 16 12 16;
     -fx-font-size: 14px;
     -fx-text-fill: #2c3e50;
 }
@@ -97,7 +93,7 @@
 }
 
 .check-box .box {
-    -fx-background-color: white;
+    -fx-background-color: rgb(255, 255, 255);
     -fx-border-color: #0d4d7a;
     -fx-border-radius: 3;
     -fx-background-radius: 3;
@@ -109,7 +105,7 @@
 }
 
 .check-box:selected .mark {
-    -fx-background-color: white;
+    -fx-background-color: rgb(255, 255, 255);
 }
 
 /* Forgot password link */
@@ -171,4 +167,25 @@
     -fx-alignment: center;
     -fx-spacing: 150;
     -fx-padding: 0 0 15 0;
+
+}
+
+/*select Account*/
+.select-button {
+    -fx-background-color: #FFF9EE;
+    -fx-background-radius: 6;
+    -fx-border-radius: 5;
+    -fx-border-width: 2;
+    -fx-text-fill: #0d4d7a;
+    -fx-border-color: #0d4d7a;
+    -fx-font-size: 15px;
+    -fx-font-weight: 600;
+    -fx-cursor: hand;
+}
+
+.combobox{
+  -fx-border-color: #0d4d7a;
+  -fx-border-width: 1;
+  -fx-background-color: white;
+  -fx-background-radius: 8;  
 }

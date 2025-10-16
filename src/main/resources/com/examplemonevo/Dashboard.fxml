@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="473.0" prefWidth="760.0" style="-fx-background-color: #FFF9EE;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane layoutX="38.0" layoutY="113.0" prefHeight="87.0" prefWidth="673.0" style="-fx-border-color: #0d4d7a;" styleClass="box">
+         <children>
+            <Text fill="#0d4d7a" layoutX="21.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Balance">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text fill="#0d4d7a" layoutX="620.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.00">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text fill="#0d4d7a" layoutX="21.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Interest">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text fill="#0d4d7a" layoutX="620.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.00">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="96.0" fitWidth="176.0" layoutX="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@ChatGPT%20Image%20Sep%2028,%202025,%2012_17_48%20AM.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="597.0" layoutY="237.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="114.0" styleClass="login-button" text="Deposit" />
+      <Button layoutX="643.0" layoutY="418.0" mnemonicParsing="false" styleClass="select-button" text="logout" />
+      <Button layoutX="597.0" layoutY="306.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="114.0" styleClass="login-button" text="Withdraw" />
+      <Button layoutX="45.0" layoutY="226.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="157.0" styleClass="login-button" text="View Account Info" />
+      <Button layoutX="45.0" layoutY="296.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="195.0" styleClass="login-button" text="Withdraw Max Amount" />
+      <Text fill="#0d4d7a" layoutX="319.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard" wrappingWidth="121.8974609375">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Button layoutX="45.0" layoutY="364.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="122.0" styleClass="login-button" text="Create Account" />
+   </children>
+</AnchorPane>
