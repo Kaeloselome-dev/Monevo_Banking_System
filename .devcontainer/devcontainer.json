@@ -1,0 +1,26 @@
+{
+  "name": "Java Dev Container",
+  // Use the official Java 21 devcontainer image
+  "image": "mcr.microsoft.com/devcontainers/java:21",
+
+  "features": {
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "21",               // or "17" if you're targeting JDK 17
+      "installMaven": true,
+      "installGradle": false
+    },
+    "ghcr.io/devcontainers-extra/features/ant-sdkman:2": {}
+  },
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "streetsidesoftware.code-spell-checker"
+      ]
+    }
+  },
+
+  // Force SDKMAN to install and set Java 21 as default
+  "postCreateCommand": "sdk install java 21.0.5-tem && sdk default java 21.0.5-tem && echo 'Codespace ready!' > .codespace-status"
+}
