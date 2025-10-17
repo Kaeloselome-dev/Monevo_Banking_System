@@ -24,7 +24,7 @@ public abstract class Customer {
         this.accounts = new ArrayList<>();
     }
     
-    // Authentication methods
+    
     public boolean login(String enteredUsername, String enteredPassword) {
         return this.username.equals(enteredUsername) && this.password.equals(enteredPassword);
     }
