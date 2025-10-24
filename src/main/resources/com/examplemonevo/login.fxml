@@ -11,36 +11,36 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="473.0" prefWidth="760.0" style="-fx-background-color: #FFFAEE;" styleClass="form-container" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="473.0" prefWidth="760.0" style="-fx-background-color: #FFFAEE;" styleClass="form-container" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.examplemonevo.Controllers.loginController">
    <children>
       <ImageView fitHeight="474.0" fitWidth="355.0" layoutX="-2.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@New%20York%20skyscrapers.jpg" />
+            <Image url="@/New York skyscrapers.jpg" />
          </image>
       </ImageView>
       <ImageView fitHeight="116.0" fitWidth="200.0" layoutX="467.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@ChatGPT%20Image%20Sep%2028,%202025,%2012_17_48%20AM.png" />
+            <Image url="@/logo.png" />
          </image>
       </ImageView>
-      <TextField id="Textfield" layoutX="431.0" layoutY="198.0" minHeight="38.0" prefHeight="38.0" prefWidth="244.0" styleClass="text-field" />
-      <Text fill="#0d4d7a" fontSmoothingType="LCD" layoutX="429.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="field-label" text="Username">
+      <TextField id="Textfield" fx:id="usernameField" layoutX="431.0" layoutY="170.0" minHeight="38.0" prefHeight="38.0" prefWidth="244.0" styleClass="text-field" />
+      <Text fill="#0d4d7a" fontSmoothingType="LCD" layoutX="429.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="field-label" text="Username">
          <font>
             <Font size="13.0" />
          </font>
       </Text>
-      <Text fill="#0d4d7a" fontSmoothingType="LCD" layoutX="431.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="field-label" text="Password">
+      <Text fill="#0d4d7a" fontSmoothingType="LCD" layoutX="431.0" layoutY="242.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="field-label" text="Password">
          <font>
             <Font size="13.0" />
          </font>
       </Text>
-      <PasswordField layoutX="431.0" layoutY="274.0" minHeight="38.0" prefHeight="38.0" prefWidth="244.0" styleClass="password-field" />
-      <Button id="button" layoutX="489.0" layoutY="377.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="130.0" styleClass="login-button" text="Login">
+      <PasswordField fx:id="passwordField" layoutX="431.0" layoutY="246.0" minHeight="38.0" prefHeight="38.0" prefWidth="244.0" styleClass="password-field" />
+      <Button id="button" fx:id="loginButton" layoutX="468.0" layoutY="340.0" mnemonicParsing="false" onAction="#handleLogin" prefHeight="38.0" prefWidth="170.0" styleClass="login-button" text="Login">
          <font>
             <Font size="13.0" />
          </font></Button>
-      <CheckBox id="checkbox" layoutX="429.0" layoutY="320.0" mnemonicParsing="false" styleClass="checkbox-container" text="Remember me" textFill="#0d4d7a" />
-      <Hyperlink id="link" layoutX="571.0" layoutY="320.0" styleClass="forgot-password" text="Forgot Password">
+      <CheckBox id="checkbox" layoutX="429.0" layoutY="297.0" mnemonicParsing="false" styleClass="checkbox-container" text="Remember me" textFill="#0d4d7a" />
+      <Hyperlink id="link" layoutX="564.0" layoutY="298.0" styleClass="forgot-password" text="Forgot Password">
          <font>
             <Font size="13.0" />
          </font>
@@ -50,5 +50,10 @@
             <Font size="10.0" />
          </font>
       </Text>
+      <Button id="button" fx:id="backButton" layoutX="468.0" layoutY="391.0" mnemonicParsing="false" onAction="#handleBack" prefHeight="38.0" prefWidth="170.0" styleClass="login-button" text="Back">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

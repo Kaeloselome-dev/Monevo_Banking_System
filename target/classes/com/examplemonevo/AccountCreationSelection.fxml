@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="473.0" prefWidth="760.0" style="-fx-background-color: #FFFAEE;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.examplemonevo.Controllers.AccountCreationController">
+    <children>
+        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="280.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@/logo.png" />
+            </image>
+        </ImageView>
+        <Text fill="#0d4d7a" layoutX="104.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please select the type of account you desire to open">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Text>
+        <Button layoutX="104.0" layoutY="255.0" mnemonicParsing="false" onAction="#handleChequeAccount" prefHeight="47.0" prefWidth="213.0" styleClass="login-button" stylesheets="@style.css" text="Cheque Account">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+        <Button layoutX="443.0" layoutY="255.0" mnemonicParsing="false" onAction="#handleSavingsAccount" prefHeight="47.0" prefWidth="213.0" styleClass="login-button" text="Savings Account" />
+        <Button layoutX="274.0" layoutY="349.0" mnemonicParsing="false" onAction="#handleInvestmentAccount" prefHeight="47.0" prefWidth="213.0" styleClass="login-button" text="Investment Account" />
+        <Button layoutX="583.0" layoutY="406.0" mnemonicParsing="false" onAction="#handleBack" prefHeight="47.0" prefWidth="73.0" styleClass="login-button" text="Back" />
+    </children>
+</AnchorPane>

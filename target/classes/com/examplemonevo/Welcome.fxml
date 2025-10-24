@@ -7,25 +7,34 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="472.0" prefWidth="760.0" style="-fx-background-color: #FFFAEE;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="473.0" prefWidth="760.0" style="-fx-background-color: #FFF9EE;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.examplemonevo.Controllers.WelcomeController">
    <children>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="278.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@ChatGPT%20Image%20Sep%2028,%202025,%2012_17_48%20AM.png" />
-         </image>
-      </ImageView>
-      <Text fill="#0d4d7a" fontSmoothingType="LCD" layoutX="267.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to Monevo">
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="280.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+          <Image url="@/logo.png"/>
+       </image>
+    </ImageView>
+      <Text fill="#0d4d7a" layoutX="269.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to Monevo">
          <font>
             <Font size="24.0" />
          </font>
       </Text>
-      <Text fill="#0d4d7a" layoutX="123.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="field-label" text="Experience the future of banking with our secure, intelligent, and personalized financial platform." textAlignment="CENTER" wrappingWidth="510.41015625">
+      <Text fill="#0d4d7a" layoutX="227.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Where your money meets intelligence.">
          <font>
-            <Font size="16.0" />
+            <Font size="18.0" />
          </font>
       </Text>
-      <Button layoutX="269.0" layoutY="310.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="83.0" styleClass="login-button" stylesheets="@style.css" text="Login" />
-      <Button layoutX="405.0" layoutY="310.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="83.0" styleClass="login-button" text="Sign Up" />
+      <Button fx:id="loginButton" layoutX="242.0" layoutY="275.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="100.0"  styleClass="login-button" text="Log in" onAction="#handleLogin" />
+      <Button fx:id="signUpButton" layoutX="417.0" layoutY="275.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="100.0"  styleClass="login-button" text="Sign up" onAction="#handleSignUp"/>
+      <Text fill="#6e7375" layoutX="326.0" layoutY="429.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter at your own risk">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Text>
+      <Text fill="#6e7375" layoutX="308.0" layoutY="445.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Monevo@2025 Ts &amp; Cs apply">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>
