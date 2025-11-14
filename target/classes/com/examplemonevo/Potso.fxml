@@ -7,20 +7,34 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="473.0" prefWidth="760.0" style="-fx-background-color: FFFAEE;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.examplemonevo.Controllers.PotsoController">
    <children>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="280.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="290.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../logo.png" />
+            <Image url="@/logo.png" />
          </image>
       </ImageView>
-      <Text fill="#0d4d7a" layoutX="201.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Do you have An account with us ?">
+      <Text fill="#0d4d7a" layoutX="144.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please confirm if you have an existing account,">
          <font>
             <Font size="24.0" />
          </font>
       </Text>
-      <Button layoutX="448.0" layoutY="292.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="111.0" styleClass="login-button" text="Yes" onAction="#handleYes"/>
-      <Button layoutX="201.0" layoutY="292.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="111.0" styleClass="login-button" stylesheets="@style.css" text="No" onAction="#handleNo" />
+      <Button layoutX="458.0" layoutY="293.0" mnemonicParsing="false" onAction="#handleYes" prefHeight="40.0" prefWidth="111.0" styleClass="login-button" text="Yes" />
+      <Button layoutX="211.0" layoutY="293.0" mnemonicParsing="false" onAction="#handleNo" prefHeight="40.0" prefWidth="111.0" styleClass="login-button" stylesheets="@style.css" text="No" />
+      <Text fill="#0d4d7a" layoutX="255.0" layoutY="238.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" or proceed to create one">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text fill="#0d4d7a" layoutX="437.0" layoutY="356.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(I already have an account)">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Text>
+      <Text fill="#0d4d7a" layoutX="201.0" layoutY="355.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(Create a new account)">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

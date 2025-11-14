@@ -7,73 +7,61 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="473.0" prefWidth="760.0" style="-fx-background-color: #FFF9EE;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.examplemonevo.Controllers.DashboardController">
-
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="711.0" prefWidth="929.0" style="-fx-background-color: #FFF9EE;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.examplemonevo.Controllers.DashboardController">
    <children>
-      <!-- Logo -->
-      <ImageView fitHeight="96.0" fitWidth="176.0" layoutX="5.0" pickOnBounds="true" preserveRatio="true">
+      <Button fx:id="logoutButton" layoutX="809.0" layoutY="655.0" mnemonicParsing="false" onAction="#handleLogout" prefHeight="46.0" prefWidth="91.0" styleClass="login-button" text="Logout" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="375.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@/logo.png" />
          </image>
       </ImageView>
-
-      <!-- Logout Button -->
-      <Button fx:id="logoutButton" layoutX="620.0" layoutY="418.0" mnemonicParsing="false" onAction="#handleLogout" prefHeight="46.0" prefWidth="91.0" styleClass="login-button" text="Logout" />
-
-      <!-- Sidebar -->
-      <AnchorPane layoutY="-2.0" prefHeight="481.0" prefWidth="209.0" style="-fx-background-color: #0d4d7a;">
+      <AnchorPane layoutX="149.0" layoutY="182.0" prefHeight="102.0" prefWidth="653.0" style="-fx-background-color: #0d4d7a;" styleClass="login-button" stylesheets="@style.css">
          <children>
-            <Button fx:id="withdrawMaxButton" layoutX="-4.0" layoutY="150.0" mnemonicParsing="false" onAction="#handleWithdrawMax" prefHeight="46.0" prefWidth="215.0" styleClass="login-button" text="Withdraw Max Amount" />
-            <Button fx:id="viewInfoButton" layoutX="-3.0" layoutY="206.0" mnemonicParsing="false" onAction="#handleViewInfo" prefHeight="46.0" prefWidth="215.0" styleClass="login-button" text="View Account Info" />
-            <Button fx:id="depositButton" layoutX="-1.0" layoutY="265.0" mnemonicParsing="false" onAction="#openDepositPage" prefHeight="46.0" prefWidth="215.0" styleClass="login-button" text="Deposit" />
-            <Button fx:id="withdrawButton" layoutX="-1.0" layoutY="323.0" mnemonicParsing="false" onAction="#openWithdrawPage" prefHeight="46.0" prefWidth="215.0" styleClass="login-button" text="Withdraw" />
-            <Button fx:id="historyButton" layoutX="-3.0" layoutY="375.0" mnemonicParsing="false" onAction="#openHistoryPage" prefHeight="46.0" prefWidth="215.0" styleClass="login-button" text="History" />
-            <Text fill="WHITE" layoutX="40.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard" wrappingWidth="121.8974609375">
+            <Text fx:id="balanceText" fill="WHITE" layoutX="40.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.00" wrappingWidth="147.0">
                <font>
                   <Font size="24.0" />
                </font>
             </Text>
-            <Button fx:id="Applyinterestbtn" layoutX="-1.0" layoutY="421.0" mnemonicParsing="false" onAction="#handleApplyInterest" prefHeight="46.0" prefWidth="215.0" styleClass="login-button" text="Apply Interest" />
-         </children>
-      </AnchorPane>
-
-      <!-- Optional extra logo -->
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="364.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../logo.png" />
-         </image>
-      </ImageView>
-
-      <!-- Balance Container -->
-      <AnchorPane layoutX="228.0" layoutY="145.0" prefHeight="55.0" prefWidth="510.0" styleClass="combobox">
-         <children>
-            <Text layoutX="14.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Balance" wrappingWidth="176.0">
+            <Text fill="#fffbfb" layoutX="20.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="P">
                <font>
-                  <Font size="16.0" />
+                  <Font size="24.0" />
                </font>
             </Text>
-            <Text fx:id="balanceText" layoutX="428.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.00" wrappingWidth="68.0">
+            <Text fill="WHITE" layoutX="14.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Available Balance">
                <font>
-                  <Font size="16.0" />
+                  <Font size="13.0" />
                </font>
             </Text>
-            <Text layoutX="411.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="P">
+            <Text fx:id="accountTypeText" fill="#fffefe" layoutX="382.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="AccountType" wrappingWidth="265.0">
                <font>
-                  <Font size="16.0" />
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="388.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Account Type">
+               <font>
+                  <Font size="13.0" />
                </font>
             </Text>
          </children>
       </AnchorPane>
 
-      <!-- History Container -->
-      <AnchorPane fx:id="historyContainer" layoutX="228.0" layoutY="237.0" prefHeight="148.0" prefWidth="510.0" styleClass="combobox" />
 
-      <!-- Account Type Text -->
-      <Text fx:id="accountTypeText" layoutX="228.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="AccountType" wrappingWidth="331.0">
+
+
+      <Button fx:id="withdrawMaxButton" layoutX="124.0" layoutY="299.0" mnemonicParsing="false" onAction="#handleWithdrawMax" prefHeight="96.0" prefWidth="212.0" styleClass="dashbutton" text="Withdraw Max Amount" />
+      <Button fx:id="viewInfoButton" layoutX="591.0" layoutY="430.0" mnemonicParsing="false" onAction="#handleViewInfo" prefHeight="96.0" prefWidth="212.0" styleClass="dashbutton" text="View Account Info" />
+      <Button fx:id="depositButton" layoutX="124.0" layoutY="430.0" mnemonicParsing="false" onAction="#openDepositPage" prefHeight="96.0" prefWidth="212.0" styleClass="dashbutton" text="Deposit" />
+      <Button fx:id="withdrawButton" layoutX="359.0" layoutY="430.0" mnemonicParsing="false" onAction="#openWithdrawPage" prefHeight="96.0" prefWidth="212.0" styleClass="dashbutton" text="Withdraw" />
+      <Button fx:id="historyButton" layoutX="359.0" layoutY="299.0" mnemonicParsing="false" onAction="#openHistoryPage" prefHeight="96.0" prefWidth="212.0" styleClass="dashbutton" stylesheets="@style.css" text="History" />
+      <Button fx:id="Applyinterestbtn" layoutX="591.0" layoutY="299.0" mnemonicParsing="false" onAction="#handleApplyInterest" prefHeight="96.0" prefWidth="212.0" styleClass="dashbutton" text="Apply Interest" />
+      <Text fill="#0d4d7a" layoutX="379.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Account Services">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="24.0" />
          </font>
       </Text>
+      <Button fx:id="OpenAccountbtn" layoutX="124.0" layoutY="559.0" mnemonicParsing="false" onAction="#OpenAccount" prefHeight="96.0" prefWidth="212.0" styleClass="dashbutton" text="Open new account" />
 
+            <!-- History Container -->
+      <AnchorPane fx:id="historyContainer" layoutX="210.0" layoutY="69.0" prefHeight="148.0" prefWidth="510.0" style="-fx-background-color: transparent;" />
    </children>
 </AnchorPane>

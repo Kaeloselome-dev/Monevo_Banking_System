@@ -194,3 +194,30 @@
 -fx-border-width: 1;
 
 }
+
+.dashbutton {
+    -fx-background-color: #FFF9EE;
+    -fx-border-color: #A2D2FF;
+    -fx-border-width: 2;
+    -fx-font-size: 16px;
+    -fx-text-fill: #0d4d7a;
+    -fx-padding: 10px 20px;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-effect: innershadow(gaussian, #FFFFFF, 10, 0, 0, 2);
+}
+
+.dashbutton:hover {
+    -fx-border-color: #0d4d7a; /* Navy blue */
+    -fx-background-color: #E4F1F7;
+    -fx-text-fill: #0d4d7a;
+}
+
+.dashbutton:pressed {
+    -fx-background-color: #D0E9F1;
+    -fx-text-fill: #0d4d7a;
+}
+
+.historytingting{
+-fx-background-color: transparent;
+}

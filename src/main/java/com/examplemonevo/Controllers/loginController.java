@@ -59,11 +59,10 @@ public class loginController {
             Customer customer = customerDAO.login(username, password);
 
             if (customer != null) {
-                // Login successful → load Potso scene
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/examplemonevo/Potso.fxml"));
                 Parent root = loader.load();
-
-                // Get the PotsoController and pass the customer object
+                
+                
                 PotsoController potsoController = loader.getController();
                 if (potsoController != null) {
                     potsoController.setCustomer(customer);  // Pass customer object to PotsoController

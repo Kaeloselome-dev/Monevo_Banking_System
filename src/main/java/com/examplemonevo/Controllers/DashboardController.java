@@ -24,6 +24,7 @@ import java.util.UUID;
 public class DashboardController {
 
     @FXML private Button logoutButton;
+    @FXML private Button OpenAccountbtn;
     @FXML private Button withdrawMaxButton;
     @FXML private Button viewInfoButton;
     @FXML private Button depositButton;
@@ -38,6 +39,7 @@ public class DashboardController {
     private Account selectedAccount;
     private AccountDAOImpl accountDAO;
     private TransactionDAOImpl transactionDAO;
+    private Account account;
 
 
     @FXML
@@ -54,6 +56,7 @@ public class DashboardController {
             logoutButton.setOnAction(e -> handleLogout());
             withdrawMaxButton.setOnAction(e -> handleWithdrawMax());
             viewInfoButton.setOnAction(e -> handleViewInfo());
+            OpenAccountbtn.setOnAction(e -> OpenAccount()); // Assuming OpenAccountbtn calls OpenAccount()
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -229,6 +232,31 @@ public class DashboardController {
         } catch (IOException e) {
             e.printStackTrace();
             showAlert("Error", "Failed to logout.");
+        }
+    }
+
+
+    @FXML
+    private void OpenAccount() {
+        try {
+            // 1. Load the FXML using an instance of FXMLLoader
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/examplemonevo/AccountCreationSelection.fxml"));
+            Scene scene = new Scene(loader.load());
+
+            // 2. Get the controller instance for the new scene
+            AccountCreationController controller = loader.getController();
+
+            // 3. Set the previous page identifier
+            // "Dashboard" MUST match the string used in AccountCreationController's handleBack method.
+            controller.setPreviousPageIdentifier("Dashboard");
+
+            // 4. Switch the scene
+            Stage stage = (Stage) OpenAccountbtn.getScene().getWindow(); // Use OpenAccountbtn to get stage
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            showAlert("Error", "Failed to open Account Creation Selection.");
         }
     }
 
