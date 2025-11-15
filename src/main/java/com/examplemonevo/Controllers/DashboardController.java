@@ -281,11 +281,18 @@ public class DashboardController {
     @FXML
     public void handleWithdrawMax() {
         if (selectedAccount != null) {
-            double amount = selectedAccount.getBalance();
-            selectedAccount.setBalance(0.0);
-            accountDAO.update(selectedAccount);
-            updateDashboard();
-            showAlert("Withdraw Max", "Withdrawn full balance: " + amount);
+            // Check if the selected account is a Savings account
+            if (selectedAccount.getAccountType().equals("Savings Account")) {
+                // Show alert if attempting to withdraw from a Savings account
+                showAlert("Withdrawal Denied", "Withdrawals are not allowed from Savings accounts.");
+            } else {
+                // Proceed with the withdrawal if it's not a Savings account
+                double amount = selectedAccount.getBalance();
+                selectedAccount.setBalance(0.0); // Withdraw the full balance
+                accountDAO.update(selectedAccount); // Update the account in the database
+                updateDashboard(); // Refresh the dashboard
+                showAlert("Withdraw Max", "Withdrawn full balance: " + amount);
+            }
         }
     }
 
