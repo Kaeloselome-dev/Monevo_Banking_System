@@ -159,7 +159,7 @@ public class DashboardController {
                 sa.setBalance(roundedBalance.doubleValue());
                 sa.setLastInterestApplied(today);
 
-                // Create a transaction for this interest
+
                 Transaction interestTransaction = new Transaction(
                         UUID.randomUUID().toString(),
                         sa.getAccountNumber(),
@@ -188,7 +188,7 @@ public class DashboardController {
                 ia.setBalance(roundedBalance.doubleValue());
                 ia.setLastInterestApplied(today);
 
-                // Create a transaction for this interest
+
                 Transaction interestTransaction = new Transaction(
                         UUID.randomUUID().toString(),
                         ia.getAccountNumber(),
@@ -281,16 +281,14 @@ public class DashboardController {
     @FXML
     public void handleWithdrawMax() {
         if (selectedAccount != null) {
-            // Check if the selected account is a Savings account
             if (selectedAccount.getAccountType().equals("Savings Account")) {
-                // Show alert if attempting to withdraw from a Savings account
                 showAlert("Withdrawal Denied", "Withdrawals are not allowed from Savings accounts.");
             } else {
                 // Proceed with the withdrawal if it's not a Savings account
                 double amount = selectedAccount.getBalance();
-                selectedAccount.setBalance(0.0); // Withdraw the full balance
-                accountDAO.update(selectedAccount); // Update the account in the database
-                updateDashboard(); // Refresh the dashboard
+                selectedAccount.setBalance(0.0);
+                accountDAO.update(selectedAccount);
+                updateDashboard();
                 showAlert("Withdraw Max", "Withdrawn full balance: " + amount);
             }
         }

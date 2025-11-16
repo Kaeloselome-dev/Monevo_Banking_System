@@ -18,9 +18,9 @@ public abstract class Account {
         this.customer = customer;
         this.accountType = accountType;
     }
+
     
-    
-    
+
     public void deposit(double amount) {
         if (amount > 0) {
             this.balance += amount;
