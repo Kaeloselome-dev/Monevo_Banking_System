@@ -44,6 +44,7 @@ public class Individual_Customer extends Customer {
         return surname;
     }
 
+
     public void setSurname(String surname) {
         this.surname = surname;
     }

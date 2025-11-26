@@ -32,7 +32,8 @@ public class Corporate_Customer extends Customer {
     
     // Getters and Setters
     public String getCompanyName() { return companyName; }
-    public String getRegistrationNumber() { return registrationNumber; }
+    public String getRegistrationNumber() { return registrationNumber;
+    }
     public String getBusinessType() { return businessType; }
     public String getContactPerson() { return contactPerson; }
     

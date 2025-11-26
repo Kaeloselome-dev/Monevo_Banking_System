@@ -63,5 +63,6 @@
 
             <!-- History Container -->
       <AnchorPane fx:id="historyContainer" layoutX="210.0" layoutY="69.0" prefHeight="148.0" prefWidth="510.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="OpenAccountbtn1" layoutX="359.0" layoutY="559.0" mnemonicParsing="false" onAction="#handleViewCustomerInfo" prefHeight="96.0" prefWidth="212.0" styleClass="dashbutton" text="View Customer Info" />
    </children>
 </AnchorPane>

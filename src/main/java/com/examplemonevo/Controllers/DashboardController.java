@@ -294,6 +294,36 @@ public class DashboardController {
         }
     }
 
+    @FXML
+    public void handleViewCustomerInfo() {
+        if (customer != null) {
+            String message = "Customer Info:\n";
+
+            // Check if the customer is an Individual or Corporate and display appropriate info
+            if (customer instanceof Individual_Customer individual) {
+                message += "First Name: " + individual.getFirstName() +
+                        "\nSurname: " + individual.getSurname() +
+                        "\nEmail: " + individual.getEmail() +
+                        "\nAddress: " + individual.getAddress() +
+                        "\nCustomer ID: " + individual.getCustomerId();
+            } else if (customer instanceof Corporate_Customer corporate) {
+                message += "Company Name: " + corporate.getCompanyName() +
+                        "\nRegistration Number: " + corporate.getRegistrationNumber() +
+                        "\nCompany Email: " + corporate.getEmail() +
+                        "\nCompany Address: " + corporate.getAddress() +
+                        "\nCustomer ID: " + corporate.getCustomerId();
+            } else {
+                message = "Unknown customer type.";
+            }
+
+
+            showAlert("Customer Info", message);
+        } else {
+            showAlert("Error", "No customer information available. Please log in first.");
+        }
+    }
+
+
     // Utility
     private void showAlert(String title, String message) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);

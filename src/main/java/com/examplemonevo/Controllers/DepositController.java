@@ -139,7 +139,7 @@ public class DepositController {
 
     // Utility method to show alerts
     private void showAlert(String title, String content) {
-        Alert alert = new Alert(Alert.AlertType.ERROR); // Changed to ERROR for error cases
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(title);
         alert.setHeaderText(null);
         alert.setContentText(content);

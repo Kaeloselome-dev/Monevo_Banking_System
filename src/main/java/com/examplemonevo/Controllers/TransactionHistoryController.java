@@ -57,13 +57,10 @@ public class TransactionHistoryController {
         }
     }
 
-    /**
-     * Called by the previous controller to set the current account.
-     * Now also loads the transaction history immediately.
-     */
+
     public void setAccount(Account account) {
         this.account = account;
-        loadTransactionHistory(); // ✅ Load transactions now that account is available
+        loadTransactionHistory();
     }
 
     @FXML
@@ -71,9 +68,7 @@ public class TransactionHistoryController {
         backButton.setOnAction(e -> goBackToDashboard());
     }
 
-    /**
-     * Load transactions for the current account and populate the table.
-     */
+
     private void loadTransactionHistory() {
         if (account == null) {
             return; // Safety check
@@ -109,9 +104,7 @@ public class TransactionHistoryController {
         transactionTable.getItems().setAll(transactions);
     }
 
-    /**
-     * Navigate back to the dashboard scene.
-     */
+
     private void goBackToDashboard() {
         try {
             javafx.fxml.FXMLLoader loader = new javafx.fxml.FXMLLoader(

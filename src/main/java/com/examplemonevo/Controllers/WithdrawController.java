@@ -150,7 +150,7 @@ public class WithdrawController {
 
     // Utility method to show alerts
     private void showAlert(String title, String content) {
-        Alert.AlertType type = title.equalsIgnoreCase("Success") ? Alert.AlertType.INFORMATION : Alert.AlertType.ERROR;
+        Alert.AlertType type = title.equalsIgnoreCase("Success") ? Alert.AlertType.INFORMATION : Alert.AlertType.INFORMATION;
         Alert alert = new Alert(type);
         alert.setTitle(title);
         alert.setHeaderText(null);
